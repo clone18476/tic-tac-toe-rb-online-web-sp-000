@@ -47,23 +47,25 @@ def current_player(board)
   #if the turn count is an even number, that means O just went, so the next/current player is X
   num_turns = turn_count(board)
   if num_turns % 2 == 0
-    player = "X"
+    player = "X"  
+    # set a new variable called player set to be either X or O ONLY 
   else
     player = "O"
   end
-  return player
+  return player 
+  #at the end it returns the value of the player variable that we set earlier in the method, which is either X or O
 end
 
 def turn(board)
-  puts "Please choose a number 1-9:"
-  user_input = gets.chomp
-  index = input_to_index(user_input)
-  if valid_move?(board, index)
-    player_token = current_player(board)
-    move(board, index, player_token)
-    display_board(board)
+  puts "Please choose a number 1-9:" #ask user for their move by posotion 1-9
+  user_input = gets.chomp   #recieves user input
+  index = input_to_index(user_input)   #converts input to index 
+  if valid_move?(board, index)    #if move is valid
+    player_token = current_player(board)    #uses this method to refer to the current player who is making the move 
+    move(board, index, player_token)   #make the move 
+    display_board(board)    #and display the board 
   else
-    turn(board)
+    turn(board)   #otherwise ask for new position until valid move 
   end
 end
 
