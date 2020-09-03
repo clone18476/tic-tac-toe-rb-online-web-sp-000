@@ -65,7 +65,7 @@ def turn(board)
     move(board, index, player_token)   #make the move 
     display_board(board)    #and display the board 
   else
-    turn(board)   #otherwise ask for new position until valid move 
+    turn(board)   #otherwise ask for new position until valid move recieved 
   end
 end
 
